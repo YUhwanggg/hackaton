@@ -16,6 +16,7 @@ const Why = () => {
                                 padding: 30,
                                 display: 'flex',
                                 justifyContent: 'center',
+                                boxShadow: '0px 0px 1px rgba(0 0 0.25)'
                             }}
                         >
                             <h1>GUARANTEE</h1>
@@ -28,6 +29,7 @@ const Why = () => {
                                 padding: 30,
                                 display: 'flex',
                                 justifyContent: 'center',
+                                boxShadow: '0px 0px 1px rgba(0 0 0.25)'
                             }}
                         >
                             <h1>SERVICE</h1>
@@ -40,6 +42,7 @@ const Why = () => {
                                 padding: 30,
                                 display: 'flex',
                                 justifyContent: 'center',
+                                boxShadow: '0px 0px 1px rgba(0 0 0.25)'
                             }}
                         >
                             <h1>EXPERIENCE</h1>
