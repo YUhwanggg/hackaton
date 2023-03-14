@@ -1,0 +1,35 @@
+﻿main {
+  .banner {
+    position: absolute;
+    top: 0;
+    z-index: -100;
+    width: 100%;
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    .first {
+      h1 {
+        font-family: "Abril Fatface";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 65px;
+        color: #ffffff;
+        text-align: center;
+      }
+      h2 {
+        font-family: "Grape Nuts";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 39px;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+}
