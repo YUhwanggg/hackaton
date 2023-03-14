@@ -1,0 +1,180 @@
+﻿.card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1400px;
+  margin-bottom: 100px;
+  h1 {
+    margin-bottom: 32px;
+    font-family: "Grape Nuts", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 2410px) {
+  .card_content {
+    margin-top: 1250px;
+  }
+}
+
+@media screen and (max-width: 2310px) {
+  .card_content {
+    margin-top: 1200px;
+  }
+}
+
+@media screen and (max-width: 2210px) {
+  .card_content {
+    margin-top: 1150px;
+  }
+}
+@media screen and (max-width: 2110px) {
+  .card_content {
+    margin-top: 1100px;
+  }
+}
+@media screen and (max-width: 2010px) {
+  .card_content {
+    margin-top: 1050px;
+  }
+}
+@media screen and (max-width: 1910px) {
+  .card_content {
+    margin-top: 1000px;
+  }
+}
+@media screen and (max-width: 1810px) {
+  .card_content {
+    margin-top: 950px;
+  }
+}
+@media screen and (max-width: 1710px) {
+  .card_content {
+    margin-top: 900px;
+  }
+}
+@media screen and (max-width: 1610px) {
+  .card_content {
+    margin-top: 850px;
+  }
+}
+
+@media screen and (max-width: 1710px) {
+  .card_content {
+    margin-top: 800px;
+  }
+}
+@media screen and (max-width: 1610px) {
+  .card_content {
+    margin-top: 750px;
+  }
+}
+@media screen and (max-width: 1510px) {
+  .card_content {
+    margin-top: 700px;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .card_content {
+    margin-top: 650px;
+  }
+}
+@media screen and (max-width: 1310px) {
+  .card_content {
+    margin-top: 600px;
+  }
+}
+@media screen and (max-width: 1210px) {
+  .card_content {
+    margin-top: 550px;
+  }
+}
+@media screen and (max-width: 1110px) {
+  .card_content {
+    margin-top: 500px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .card_content {
+    margin-top: 450px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .card_content {
+    margin-top: 400px;
+  }
+}
+@media screen and (max-width: 910px) {
+  .card_content {
+    margin-top: 350px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .card_content {
+    margin-top: 300px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .card_content {
+    margin-top: 250px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .card_content {
+    margin-top: 250px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .card_content {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .card_content {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .card_content {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .card_content {
+    margin-top: 150px;
+  }
+}
+@media screen and (max-width: 510px) {
+  .card_content {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .card_content {
+    margin-top: 250px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .card_content {
+    margin-top: 250px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .card_content {
+    margin-top: 100px;
+  }
+}

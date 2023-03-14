@@ -3,19 +3,19 @@
   justify-content: center;
   align-items: center;
   height: 100px;
-  margin-top: 20px;
   nav {
     ul {
       display: flex;
       gap: 31px;
       li {
         list-style: none;
-        font-family: "Work Sans";
+        font-family: "Work Sans", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
-        color: #ffffff;
+        color: #850909;
+        cursor: pointer;
       }
     }
   }
