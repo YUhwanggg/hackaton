@@ -12,6 +12,7 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [password_confirm, setPassword_confirm] = useState("")
   const [email, setEmail] = useState("");
+  const [canSubmit, setCanSubmit] = useState(false);
   const [incorrect, setIncorrect] = useState("");
 
   const navigate = useNavigate();
@@ -58,20 +59,18 @@ const Registration = () => {
         password_confirm,
       });
       if (response.status === 200 || 201) {
-        // console.log("Success:", response.data);
-        // navigate("/auth");
         AuthUsers()
       }
     } catch (e) {
       error()
     }
 
-    if (password_confirm !== password) {
+    if (password !== password_confirm) {
+      setCanSubmit(true);
       setIncorrect("Пароли не совпадают!");
     } else {
-      console.log("NICE")
+      setCanSubmit(false);
     }
-
   };
 
 
@@ -112,7 +111,7 @@ const Registration = () => {
               />
               {incorrect && <div>{incorrect}</div>}
               {contextHolder}
-              <button type="submit" >Регистрация</button>
+              <button type="submit" disabled={!canSubmit} >Регистрация</button>
             </form>
           </div>
         </div>
