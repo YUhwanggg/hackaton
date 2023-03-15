@@ -64,7 +64,7 @@ const Header = () => {
           {token ? (
             <Link to='/profile'>
               {profile.map((prof) => (
-                <img className={s.ava} src={prof.photo} alt="ava" />
+                <img className={s.ava} src={prof.photo} alt="profile" />
               ))}
             </Link>
           ) : (

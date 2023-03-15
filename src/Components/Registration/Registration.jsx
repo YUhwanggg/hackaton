@@ -10,12 +10,11 @@ import { REGISTER, AUTH } from "../../Constants/api";
 const Registration = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [password_confirm, setPassword_confirm] = useState("")
   const [email, setEmail] = useState("");
+  const [incorrect, setIncorrect] = useState("");
 
   const navigate = useNavigate();
-  const handleAuth = () => {
-    navigate("/auth");
-  };
 
   const [messageApi, contextHolder] = message.useMessage();
   const error = () => {
@@ -54,8 +53,9 @@ const Registration = () => {
     try {
       const response = await axios.post(REGISTER, {
         username,
-        password,
         email,
+        password,
+        password_confirm,
       });
       if (response.status === 200 || 201) {
         // console.log("Success:", response.data);
@@ -65,6 +65,13 @@ const Registration = () => {
     } catch (e) {
       error()
     }
+
+    if (password_confirm !== password) {
+      setIncorrect("Пароли не совпадают!");
+    } else {
+      console.log("NICE")
+    }
+
   };
 
 
@@ -97,18 +104,13 @@ const Registration = () => {
                 autoComplete="on"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              {/* <input
+              <input
                 type="password"
                 placeholder="Повторить пароль*"
                 value={password_confirm}
                 onChange={(e) => setPassword_confirm(e.target.value)}
               />
-              <input
-                type="number"
-                placeholder="Телефон"
-                value={phone_number}
-                onChange={(e) => setPhone_number(e.target.value)}
-              /> */}
+              {incorrect && <div>{incorrect}</div>}
               {contextHolder}
               <button type="submit" >Регистрация</button>
             </form>
