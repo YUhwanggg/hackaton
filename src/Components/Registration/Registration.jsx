@@ -12,7 +12,6 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [password_confirm, setPassword_confirm] = useState("")
   const [email, setEmail] = useState("");
-  const [canSubmit, setCanSubmit] = useState(false);
   const [incorrect, setIncorrect] = useState("");
 
   const navigate = useNavigate();
@@ -51,26 +50,24 @@ const Registration = () => {
 
   const postUsers = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(REGISTER, {
-        username,
-        email,
-        password,
-        password_confirm,
-      });
-      if (response.status === 200 || 201) {
-        AuthUsers()
-      }
-    } catch (e) {
-      error()
-    }
-
     if (password !== password_confirm) {
-      setCanSubmit(true);
       setIncorrect("Пароли не совпадают!");
-    } else {
-      setCanSubmit(false);
+    } else{
+      try {
+        const response = await axios.post(REGISTER, {
+          username,
+          email,
+          password,
+          password_confirm,
+        });
+        if (response.status === 200 || 201) {
+          AuthUsers()
+        }
+      } catch (e) {
+        error()
+      }
     }
+    
   };
 
 
@@ -111,7 +108,7 @@ const Registration = () => {
               />
               {incorrect && <div>{incorrect}</div>}
               {contextHolder}
-              <button type="submit" disabled={!canSubmit} >Регистрация</button>
+              <button type="submit">Регистрация</button>
             </form>
           </div>
         </div>
