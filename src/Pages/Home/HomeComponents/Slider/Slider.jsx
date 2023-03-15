@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Carousel } from 'antd';
-import banner2 from '../../../../Assets/banner2.png'
+import banner2 from '../../../../Assets/img/banner2.png'
 import s from './Slider.module.scss'
 
 
@@ -13,19 +13,19 @@ const Slider = () => {
             <div className={s.carousel}>
                 <Carousel dots={false} autoplay={true} afterChange={onChange}>
                     <div>
-                        <img src={banner2} alt="" />
+                        <img src={banner2} alt="slide" />
                     </div>
                     <div>
-                        <img src={banner2} alt="" />
+                        <img src={banner2} alt="slide" />
                     </div>
                     <div>
-                        <img src={banner2} alt="" />
+                        <img src={banner2} alt="slide" />
                     </div>
                     <div>
-                        <img src={banner2} alt="" />
+                        <img src={banner2} alt="slide" />
                     </div>
                     <div>
-                        <img src={banner2} alt="" />
+                        <img src={banner2} alt="slide" />
                     </div>
                 </Carousel>
             </div>

@@ -1,9 +1,12 @@
 ﻿header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 65%;
     ul {
       display: flex;
       gap: 31px;
@@ -19,6 +22,10 @@
       }
     }
   }
+}
+
+a{
+  color: #850909;
 }
 
 @media screen and (max-width: 425px) {

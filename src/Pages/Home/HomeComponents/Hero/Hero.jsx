@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import s from './Hero.module.scss'
-import banner from '../../../../Assets/banner.png'
-import location from '../../../../Assets/location_hero.png'
+import banner from '../../../../Assets/img/banner.png'
+import location from '../../../../Assets/img/location_hero.png'
 import { Carousel } from 'antd';
 
 const Hero = () => {
@@ -9,26 +9,19 @@ const Hero = () => {
         console.log(currentSlide);
     };
     return (
-        <>
+        <section className={s.main}>
             <Carousel
                 dots={false}
                 style={{
-                    position: 'absolute',
                     zIndex: -10,
                     left: 0,
                     right: 0,
                 }} autoplay={true} afterChange={onChange}>
                 <div>
-                    <img src={banner} alt="" />
+                    <img src={banner} alt="slide" />
                 </div>
                 <div>
-                    <img src={banner} alt="" />
-                </div>
-                <div>
-                    <img src={banner} alt="" />
-                </div>
-                <div>
-                    <img src={banner} alt="" />
+                    <img src={banner} alt="slide" />
                 </div>
             </Carousel>
             <div className={s.section}>
@@ -38,7 +31,7 @@ const Hero = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, repellat <br /> aperiam fuga distinctio officia quod itaque deleniti sed reiciendis similique inventore. Autem <br /> voluptatem nesciunt saepe impedit in nostrum, ex libero.</p>
                 </div>
             </div>
-        </>
+        </section>
     );
 };
 

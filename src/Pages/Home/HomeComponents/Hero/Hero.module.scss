@@ -1,4 +1,8 @@
-﻿img {
+﻿.main{
+  position: relative;
+}
+
+img {
   width: 100%;
   background-repeat: no-repeat;
   border-radius: 1%;
@@ -10,7 +14,11 @@
   align-items: center;
   padding-top: 300px;
   height: auto;
+  position: absolute;
+  width: 100%;
+  top: 0;
   .first {
+    text-align: center;
     h1 {
       font-family: "Abril Fatface", sans-serif;
       font-style: normal;
@@ -18,7 +26,6 @@
       font-size: 48px;
       line-height: 65px;
       color: #ffffff;
-      text-align: center;
     }
     h2 {
       font-family: "Grape Nuts", sans-serif;
@@ -27,7 +34,6 @@
       font-size: 32px;
       line-height: 39px;
       color: #ffffff;
-      text-align: center;
     }
     p {
       padding-top: 60px;
@@ -36,7 +42,6 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 23px;
-      text-align: center;
       color: #ffffff;
     }
   }

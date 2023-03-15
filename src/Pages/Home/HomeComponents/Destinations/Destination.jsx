@@ -2,10 +2,10 @@
 import s from './Destination.module.scss'
 import { Card } from 'antd';
 const { Meta } = Card;
-import slide1 from '../../../../Assets/slide1.png'
-import slide2 from '../../../../Assets/slide2.png'
-import slide3 from '../../../../Assets/slide3.png'
-import slide4 from '../../../../Assets/slide4.png'
+import slide1 from '../../../../Assets/img/slide1.png'
+import slide2 from '../../../../Assets/img/slide2.png'
+import slide3 from '../../../../Assets/img/slide3.png'
+import slide4 from '../../../../Assets/img/slide4.png'
 
 
 const Destination = () => {
