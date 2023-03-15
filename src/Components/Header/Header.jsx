@@ -46,7 +46,9 @@ const Header = () => {
             </li>
             <li>Packages</li>
             <li>Tours</li>
-            <li>About Us</li>
+            <li>
+              <Link to='/about'>About Us</Link>
+            </li>
             <li>Contact</li>
           </ul>
         </nav>
