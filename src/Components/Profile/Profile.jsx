@@ -6,19 +6,11 @@ import {
     Button,
     Modal,
     Select,
-    Space,
     Switch,
-    Cascader,
-    DatePicker,
     Form,
-    InputNumber,
-    Radio,
-    TreeSelect,
     Upload,
 } from 'antd';
-import {
-    CheckOutlined, InboxOutlined, UploadOutlined
-} from '@ant-design/icons';
+import { InboxOutlined, } from '@ant-design/icons';
 import s from './Profile.module.scss'
 import axios from 'axios';
 import { PROFILE } from "../../Constants/api"
