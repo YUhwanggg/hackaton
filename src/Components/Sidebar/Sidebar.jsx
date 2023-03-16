@@ -52,7 +52,12 @@ const Sidebar = ({ show, setShowNav }) => {
         </div>
       </motion.div>
       <ul>
-        <motion.li className={s.profile}>
+        <motion.li className={s.profile}
+          initial={{ y: -40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1.5 }}
+          whileHover={{ scale: 1.1, transition: "0.4s" }}
+        >
           <Link to="/profile" onClick={() => setShowNav(false)}>
             Profile
           </Link>
