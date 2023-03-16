@@ -43,6 +43,36 @@
   line-height: 85px;
 }
 
+.sidenav > ul > .profile > a {
+  color: black;
+  font-size: 1.8rem;
+  display: block;
+  padding: 10px;
+}
+
+.sidenav > ul > .log {
+  margin-top: 50px;
+  list-style: none;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  color: #000000;
+  border: 1px solid black;
+  border-radius: 8%;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+}
+
+.sidenav > ul > .log:hover {
+  background: #eb2323;
+  transition: 0.4s;
+  color: #fff;
+  border: none;
+}
+
 .sidenav > ul > .li > a {
   color: black;
   font-size: 16px;
