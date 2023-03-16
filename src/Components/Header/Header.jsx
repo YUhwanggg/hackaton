@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { PROFILE } from "../../Constants/api";
+import { PROFILE, USERINFO } from "../../Constants/api";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
 import { UserOutlined } from '@ant-design/icons'
@@ -9,6 +9,9 @@ import { Avatar } from "antd";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [userInfo, setuserInfo] = useState([])
+  const [showNav, setShowNav] = useState(false);
+  const [profile, setProfile] = useState([])
 
   const handleRegister = () => {
     navigate("/reg");
@@ -25,18 +28,26 @@ const Header = () => {
     navigate("/reg");
   };
 
-  const [showNav, setShowNav] = useState(false);
 
   const getProfile = async () => {
     const res = await axios.get(PROFILE)
     setProfile(res.data)
   }
 
+  const getInfo = async () => {
+    const res = await axios.get(USERINFO, {
+      username,
+    })
+    setuserInfo(res.data)
+  }
+
   useEffect(() => {
     getProfile()
   }, [])
 
-  const [profile, setProfile] = useState([])
+  useEffect(() => {
+    getInfo()
+  }, [])
 
   return (
     <div className={s.header} >
@@ -80,6 +91,9 @@ const Header = () => {
           ) : (
             <></>
           )}
+          {userInfo.map((info) => (
+            <h1>{info.username}</h1>
+          ))}
         </div>
         <div className={s.burger}>
           <label className={s.label} htmlFor="check">
