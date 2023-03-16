@@ -35,11 +35,14 @@ const Header = () => {
   }
 
   const getInfo = async () => {
-    const res = await axios.get(USERINFO, {
-      username,
-    })
-    setuserInfo(res.data)
+    await axios.get(USERINFO,)
+      .then((response) => {
+        console.log(response)
+      })
   }
+
+  console.log(userInfo)
+
 
   useEffect(() => {
     getProfile()
@@ -91,9 +94,17 @@ const Header = () => {
           ) : (
             <></>
           )}
-          {userInfo.map((info) => (
-            <h1>{info.username}</h1>
-          ))}
+          {token ? (
+            <>
+              {userInfo.map((info) => (
+                <h1 style={{
+                  color: "white"
+                }}>{info.username}</h1>
+              ))}
+            </>
+          ) : (
+            <></>
+          )}
         </div>
         <div className={s.burger}>
           <label className={s.label} htmlFor="check">
