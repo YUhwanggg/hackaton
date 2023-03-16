@@ -51,7 +51,7 @@ const Registration = () => {
   const postUsers = async (e) => {
     e.preventDefault();
     if (password !== password_confirm) {
-      setIncorrect("Пароли не совпадают!");
+      setIncorrect("Password mismatch!");
     } else{
       try {
         const response = await axios.post(REGISTER, {
@@ -78,36 +78,36 @@ const Registration = () => {
             <img src={RegisterBackground} alt="img" />
           </div>
           <div className={s.registerForm}>
-            <h1>Добро пожаловать!</h1>
+            <h1>Welcome!</h1>
             <form onSubmit={postUsers}>
               <input
                 type="text"
                 value={username}
-                placeholder="Имя пользователя"
+                placeholder="Username"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <input
                 type="mail"
-                placeholder="Почта"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 type="password"
-                placeholder="Пароль*"
+                placeholder="Password*"
                 value={password}
                 autoComplete="on"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <input
                 type="password"
-                placeholder="Повторить пароль*"
+                placeholder="Repeat Password*"
                 value={password_confirm}
                 onChange={(e) => setPassword_confirm(e.target.value)}
               />
               {incorrect && <div>{incorrect}</div>}
               {contextHolder}
-              <button type="submit">Регистрация</button>
+              <button type="submit">Register</button>
             </form>
           </div>
         </div>

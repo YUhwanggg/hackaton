@@ -49,13 +49,13 @@ const Contact = () => {
   };
   return (
     <div className={s.contact}>
-      <h1>Связаться</h1>
-      <p>Обращайтесь к нам по почте</p>
+      <h1 className={s.tag}>Get In Touch</h1>
+      <p>Contact us by mail</p>
       <form ref={form} onSubmit={sendEmail} className={s.btn}>
-        <input type="email" name="user_email" placeholder="Введти свою почту" />
+        <input type="email" name="user_email" placeholder="Enter your email" />
         {contextHolder}
         <button value="send" type="submit" onClick={openMessage}>
-          Отправить
+          Send
         </button>
       </form>
     </div>
