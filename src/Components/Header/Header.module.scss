@@ -39,7 +39,13 @@
     .right {
       display: flex;
       gap: 20px;
-      span {
+      align-items: center;
+      .ava {
+        border: none;
+        display: flex;
+        align-items: center;
+      }
+      .span {
         list-style: none;
         font-family: "Work Sans", sans-serif;
         font-style: normal;
@@ -53,7 +59,7 @@
         cursor: pointer;
         background: none;
       }
-      span:hover {
+      .span:hover {
         background: #eb2323;
         transition: 0.4s;
         color: #fff;

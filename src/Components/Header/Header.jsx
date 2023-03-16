@@ -4,6 +4,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { PROFILE } from "../../Constants/api";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
+import { UserOutlined } from '@ant-design/icons'
+import { Avatar } from "antd";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -55,7 +57,7 @@ const Header = () => {
         </nav>
         <div className={s.right}>
           {token ? (
-            <span onClick={logout}>Log out</span>
+            <span className={s.span} onClick={logout}>Log out</span>
           ) : (
             <button onClick={handleAuth}>Sign In</button>
           )}
@@ -65,10 +67,15 @@ const Header = () => {
             <button onClick={handleRegister}>Sign Up</button>
           )}
           {token ? (
+            <hr style={{
+              height: '30px'
+            }} />
+          ) : (
+            <></>
+          )}
+          {token ? (
             <Link to='/profile'>
-              {profile.map((prof) => (
-                <img className={s.ava} src={prof.photo} alt="profile" />
-              ))}
+              <Avatar className={s.ava} src={<UserOutlined />} alt="profile" />
             </Link>
           ) : (
             <></>
