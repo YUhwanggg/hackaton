@@ -6,9 +6,15 @@
 html {
   scroll-behavior: smooth;
 }
+
 a {
   text-decoration: inherit;
   font-family: "Inter";
+  transition: 0.5s;
+}
+
+.active{
+  color: rgb(21, 21, 216);
 }
 
 body {

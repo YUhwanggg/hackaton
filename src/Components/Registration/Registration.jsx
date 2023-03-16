@@ -67,7 +67,6 @@ const Registration = () => {
         error()
       }
     }
-    
   };
 
 

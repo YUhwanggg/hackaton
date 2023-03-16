@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { PROFILE } from "../../Constants/api";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
@@ -42,14 +42,15 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
             </li>
-            <li>Packages</li>
-            <li>Tours</li>
             <li>
-              <Link to='/about'>About Us</Link>
+              <NavLink to='/tours'>Tours</NavLink>
             </li>
-            <li>Contact</li>
+            <li>
+              <NavLink to='/about'>About Us</NavLink>
+            </li>
+            <li><NavLink to='/contact'>Contact</NavLink></li>
           </ul>
         </nav>
         <div className={s.right}>
