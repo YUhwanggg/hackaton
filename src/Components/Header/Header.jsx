@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { PROFILE } from "../../Constants/api";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";

@@ -11,29 +11,85 @@
       display: flex;
       gap: 31px;
       li {
-        list-style: none;
-        font-family: "Work Sans", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        color: #850909;
         cursor: pointer;
         align-items: center;
         display: flex;
+        a {
+          list-style: none;
+          font-family: "Work Sans", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          color: #000000;
+        }
       }
     }
   }
   .right {
     display: flex;
+    gap: 20px;
+    span {
+      list-style: none;
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+      border: 1px solid black;
+      border-radius: 8%;
+      padding: 10px;
+      cursor: pointer;
+      background: none;
+    }
+    span:hover {
+      background: #eb2323;
+      transition: 0.4s;
+      color: #fff;
+      border: none;
+    }
+    button {
+      border: none;
+      background: #008000;
+      border-radius: 10%;
+      padding: 10px;
+      cursor: pointer;
+      list-style: none;
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #fff;
+    }
+    button:last-child {
+      border: 1px solid;
+      border-radius: 10%;
+      padding: 10px;
+      cursor: pointer;
+      background: none;
+      list-style: none;
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+    }
+    button:hover {
+      background: #2e422e;
+      transition: 0.4s;
+    }
+    button:hover:last-child {
+      background: #2b2a2a;
+      color: #fff;
+      transition: 0.4s;
+    }
   }
   .burger {
     display: none;
   }
-}
-
-a {
-  color: #850909;
 }
 
 @media screen and (max-width: 425px) {
