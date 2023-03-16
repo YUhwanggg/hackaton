@@ -55,12 +55,12 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 850px) {
-    .modal_main{
-        flex-direction: column-reverse;
-        div:first-child{
-            height: 50% !important;
-            width: 60% !important;
-            margin: 0 auto;
-        }
+  .modal_main {
+    flex-direction: column-reverse;
+    div:first-child {
+      height: 50% !important;
+      width: 60% !important;
+      margin: 0 auto;
     }
+  }
 }

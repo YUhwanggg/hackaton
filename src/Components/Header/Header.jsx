@@ -37,7 +37,7 @@ const Header = () => {
   const [profile, setProfile] = useState([])
 
   return (
-    <div id="container">
+    <div className={s.header} >
       <header>
         <nav>
           <ul>

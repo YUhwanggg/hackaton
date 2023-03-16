@@ -13,7 +13,7 @@ a {
   transition: 0.5s;
 }
 
-.active{
+.active {
   color: rgb(21, 21, 216);
 }
 
@@ -29,4 +29,8 @@ body {
 #container {
   max-width: 80%;
   margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }

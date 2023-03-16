@@ -1,7 +1,9 @@
 ﻿import React from 'react';
 import s from './Hero.module.scss'
-import banner from '../../../../Assets/img/banner.png'
-import location from '../../../../Assets/img/location_hero.png'
+import banner1 from '../../../../Assets/img/banner1.jpg'
+import banner2 from '../../../../Assets/img/banner2.jpg'
+import banner3 from '../../../../Assets/img/banner3.jpg'
+import banner4 from '../../../../Assets/img/banner4.jpg'
 import { Carousel } from 'antd';
 
 const Hero = () => {
@@ -18,10 +20,16 @@ const Hero = () => {
                     right: 0,
                 }} autoplay={true} afterChange={onChange}>
                 <div>
-                    <img src={banner} alt="slide" />
+                    <img src={banner1} alt="slide" />
                 </div>
                 <div>
-                    <img src={banner} alt="slide" />
+                    <img src={banner2} alt="slide" />
+                </div>
+                <div>
+                    <img src={banner3} alt="slide" />
+                </div>
+                <div>
+                    <img src={banner4} alt="slide" />
                 </div>
             </Carousel>
             <div className={s.section}>
