@@ -21,6 +21,18 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .search{
+    padding-top: 50px;
+    input{
+      min-width: 300px;
+      max-width: 600px;
+    }
+    span{
+      button{
+        background-color: #000000 !important;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 1000px) {

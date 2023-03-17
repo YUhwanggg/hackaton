@@ -4,14 +4,14 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { PROFILE, USERINFO } from "../../Constants/api";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
-import { UserOutlined } from '@ant-design/icons'
+import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [userInfo, setuserInfo] = useState([])
+  const [userInfo, setuserInfo] = useState([]);
   const [showNav, setShowNav] = useState(false);
-  const [profile, setProfile] = useState([])
+  const [profile, setProfile] = useState([]);
 
   const handleRegister = () => {
     navigate("/reg");
@@ -28,32 +28,33 @@ const Header = () => {
     navigate("/reg");
   };
 
-
   const getProfile = async () => {
-    const res = await axios.get(PROFILE)
-    setProfile(res.data)
-  }
+    const res = await axios.get(PROFILE);
+    setProfile(res.data);
+  };
 
   const getInfo = async () => {
-    await axios.get(USERINFO,)
-      .then((response) => {
-        console.log(response)
+    await axios
+      .get(USERINFO, {
+        headers: {
+          Authorization: `${token}`,
+        },
       })
-  }
-
-  console.log(userInfo)
-
-
-  useEffect(() => {
-    getProfile()
-  }, [])
+      .then((response) => {
+        console.log(response);
+      });
+  };
 
   useEffect(() => {
-    getInfo()
-  }, [])
+    getProfile();
+  }, []);
+
+  useEffect(() => {
+    getInfo();
+  }, []);
 
   return (
-    <div className={s.header} >
+    <div className={s.header}>
       <header>
         <nav>
           <ul>
@@ -61,34 +62,36 @@ const Header = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to='/tours'>Tours</NavLink>
+              <NavLink to="/tours">Tours</NavLink>
             </li>
             <li>
-              <NavLink to='/about'>About Us</NavLink>
+              <NavLink to="/about">About Us</NavLink>
             </li>
-            <li><NavLink to='/contact'>Contact</NavLink></li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
           </ul>
         </nav>
         <div className={s.right}>
           {token ? (
-            <span className={s.span} onClick={logout}>Log out</span>
+            <span className={s.span} onClick={logout}>
+              Log out
+            </span>
           ) : (
             <button onClick={handleAuth}>Sign In</button>
           )}
+          {token ? <></> : <button onClick={handleRegister}>Sign Up</button>}
           {token ? (
-            <></>
-          ) : (
-            <button onClick={handleRegister}>Sign Up</button>
-          )}
-          {token ? (
-            <hr style={{
-              height: '30px'
-            }} />
+            <hr
+              style={{
+                height: "30px",
+              }}
+            />
           ) : (
             <></>
           )}
           {token ? (
-            <Link to='/profile'>
+            <Link to="/profile">
               <Avatar className={s.ava} src={<UserOutlined />} alt="profile" />
             </Link>
           ) : (
@@ -97,9 +100,13 @@ const Header = () => {
           {token ? (
             <>
               {userInfo.map((info) => (
-                <h1 style={{
-                  color: "white"
-                }}>{info.username}</h1>
+                <h1
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  {info.username}
+                </h1>
               ))}
             </>
           ) : (

@@ -14,7 +14,7 @@ a {
 }
 
 .active {
-  color: rgb(21, 21, 216);
+  color: rgb(109, 216, 21) !important;
 }
 
 body {
