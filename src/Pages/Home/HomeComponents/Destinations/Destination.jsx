@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import React, { useEffect, useState } from "react";
 import s from "./Destination.module.scss";
 import { motion } from "framer-motion";
 import { Card } from "antd";
@@ -9,8 +9,20 @@ import slide1 from "../../../../Assets/img/slide1.png";
 import slide2 from "../../../../Assets/img/slide2.png";
 import slide3 from "../../../../Assets/img/slide3.png";
 import slide4 from "../../../../Assets/img/slide4.png";
+import axios from "axios";
+import { APITICKETS } from "../../../../Constants/api";
 
 const Destination = () => {
+  const [search, setSearch] = useState("");
+  
+  useEffect(() => {
+    setTimeout(() => {
+      axios.post(APITICKETS, {
+        search
+      }).then(res => console.log(res))
+    }, 1000)
+  }, [search])
+
   return (
     <>
       <div id="container">
@@ -130,6 +142,8 @@ const Destination = () => {
               placeholder="Введите код билета"
               enterButton="Искать"
               size="large"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
             />
           </motion.div>
         </div>
