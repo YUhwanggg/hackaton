@@ -187,28 +187,14 @@ const Destination = () => {
             }}
           >
             <Descriptions title={state.airport_in} layout="vertical">
-              <Descriptions.Item label="Company">
-                {state.aircompany}{" "}
-              </Descriptions.Item>
-              <Descriptions.Item label="Start Time">
-                {state.time_arrival}{" "}
-              </Descriptions.Item>
-              <Descriptions.Item label="End Time">
-                {state.time_departure}{" "}
-              </Descriptions.Item>
+              <Descriptions.Item label="Company">{state.aircompany}</Descriptions.Item>
+              <Descriptions.Item label="Start Time">{state.time_arrival}</Descriptions.Item>
+              <Descriptions.Item label="End Time">{state.time_departure}</Descriptions.Item>
               <Descriptions.Item label="Data">{state.data}</Descriptions.Item>
-              <Descriptions.Item label="Airplane">
-                {state.plane}{" "}
-              </Descriptions.Item>
-              <Descriptions.Item label="Flight Number">
-                {state.flight_number}{" "}
-              </Descriptions.Item>
-              <Descriptions.Item label="From">
-                {state.airport_in}{" "}
-              </Descriptions.Item>
-              <Descriptions.Item label="To">
-                {state.airport_out}{" "}
-              </Descriptions.Item>
+              <Descriptions.Item label="Airplane">{state.plane}</Descriptions.Item>
+              <Descriptions.Item label="Flight Number">{state.flight_number}</Descriptions.Item>
+              <Descriptions.Item label="From">{state.airport_in}</Descriptions.Item>
+              <Descriptions.Item label="To">{state.airport_out}</Descriptions.Item>
             </Descriptions>
           </motion.div>
         ) : (
