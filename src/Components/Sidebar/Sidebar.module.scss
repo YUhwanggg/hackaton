@@ -1,6 +1,6 @@
 .sidenav {
   width: 100%;
-  background: #008000;
+  background: #ffffff;
   position: fixed;
   height: 100%;
   left: -100%;
@@ -41,6 +41,36 @@
   font-style: normal;
   font-weight: 500;
   line-height: 85px;
+}
+
+.sidenav > ul > .profile > a {
+  color: black;
+  font-size: 1.8rem;
+  display: block;
+  padding: 10px;
+}
+
+.sidenav > ul > .log {
+  margin-top: 50px;
+  list-style: none;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  color: #000000;
+  border: 1px solid black;
+  border-radius: 8%;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+}
+
+.sidenav > ul > .log:hover {
+  background: #eb2323;
+  transition: 0.4s;
+  color: #fff;
+  border: none;
 }
 
 .sidenav > ul > .li > a {
@@ -108,7 +138,7 @@
   }
 
   label span {
-    background: black;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     height: 6px;
     margin: 8px 0;

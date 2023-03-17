@@ -52,6 +52,16 @@ const Sidebar = ({ show, setShowNav }) => {
         </div>
       </motion.div>
       <ul>
+        <motion.li className={s.profile}
+          initial={{ y: -40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1.5 }}
+          whileHover={{ scale: 1.1, transition: "0.4s" }}
+        >
+          <Link to="/profile" onClick={() => setShowNav(false)}>
+            Profile
+          </Link>
+        </motion.li>
         <motion.li className={s.li}
           initial={{ y: -50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -88,19 +98,14 @@ const Sidebar = ({ show, setShowNav }) => {
           transition={{ delay: 0.2, duration: 1.2 }}
           whileHover={{ scale: 1.1, transition: "0" }}
         >
-          <a href="#about" onClick={() => setShowNav(false)}>
+          <Link to='/about' onClick={() => setShowNav(false)}>
             About
-          </a>
+          </Link>
         </motion.li>
         {
           token ? (
             <>
-              <motion.li>
-                <Link to="/profile" onClick={() => setShowNav(false)}>
-                  Profile
-                </Link>
-              </motion.li>
-              <motion.li onClick={logout}>
+              <motion.li className={s.log} onClick={logout}>
                 Log Out
               </motion.li>
             </>

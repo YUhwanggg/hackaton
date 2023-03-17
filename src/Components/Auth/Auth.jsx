@@ -44,21 +44,21 @@ const Auth = () => {
             <img src={RegisterBackground} alt="img" />
           </div>
           <div className={s.authForm}>
-            <h1>Добро пожаловать!</h1>
+            <h1>Welcome!</h1>
             <form onSubmit={postUsers}>
               <input
                 type="text"
                 value={username}
-                placeholder="Имя пользователя"
+                placeholder="Username"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <input
                 type="password"
-                placeholder="Пароль*"
+                placeholder="Password*"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button>Войти</button>
+              <button>Login</button>
             </form>
           </div>
         </div>

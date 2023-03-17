@@ -1,0 +1,40 @@
+﻿.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 250px;
+}
+
+.user {
+  height: 400px;
+  margin: 50px 63px 90px 63px;
+  padding: 20px;
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: 6px 6px 33px #e0e0e0, -6px -6px 33px #ffffff;
+}
+
+.ava {
+  margin-bottom: 30px;
+}
+
+.items {
+  margin: 50px 63px 50px 63px;
+}
+
+.calendar {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35.4513px;
+  line-height: 53px;
+  color: #404040;
+}
+
+@media screen and (max-width: 425px) {
+  .user {
+    margin: 50px 20px 90px 20px;
+  }
+}

@@ -1,12 +1,17 @@
 ﻿import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
-import { Link, useNavigate } from "react-router-dom";
-import { PROFILE } from "../../Constants/api";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { PROFILE, USERINFO } from "../../Constants/api";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar } from "antd";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [userInfo, setuserInfo] = useState([]);
+  const [showNav, setShowNav] = useState(false);
+  const [profile, setProfile] = useState([]);
 
   const handleRegister = () => {
     navigate("/reg");
@@ -23,50 +28,87 @@ const Header = () => {
     navigate("/reg");
   };
 
-  const [showNav, setShowNav] = useState(false);
-
   const getProfile = async () => {
-    const res = await axios.get(PROFILE)
-    setProfile(res.data)
-  }
+    const res = await axios.get(PROFILE);
+    setProfile(res.data);
+  };
+
+  const getInfo = async () => {
+    await axios
+      .get(USERINFO, {
+        headers: {
+          Authorization: `${token}`,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      });
+  };
 
   useEffect(() => {
-    getProfile()
-  }, [])
+    getProfile();
+  }, []);
 
-  const [profile, setProfile] = useState([])
+  useEffect(() => {
+    getInfo();
+  }, []);
 
   return (
-    <div id="container">
+    <div className={s.header}>
       <header>
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
             </li>
-            <li>Packages</li>
-            <li>Tours</li>
-            <li>About Us</li>
-            <li>Contact</li>
+            <li>
+              <NavLink to="/tours">Tours</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About Us</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
           </ul>
         </nav>
         <div className={s.right}>
           {token ? (
-            <span onClick={logout}>Log out</span>
+            <span className={s.span} onClick={logout}>
+              Log out
+            </span>
           ) : (
             <button onClick={handleAuth}>Sign In</button>
           )}
+          {token ? <></> : <button onClick={handleRegister}>Sign Up</button>}
           {token ? (
-            <></>
+            <hr
+              style={{
+                height: "30px",
+              }}
+            />
           ) : (
-            <button onClick={handleRegister}>Sign Up</button>
+            <></>
           )}
           {token ? (
-            <Link to='/profile'>
-              {profile.map((prof) => (
-                <img className={s.ava} src={prof.photo} alt="profile" />
-              ))}
+            <Link to="/profile">
+              <Avatar className={s.ava} src={<UserOutlined />} alt="profile" />
             </Link>
+          ) : (
+            <></>
+          )}
+          {token ? (
+            <>
+              {userInfo.map((info) => (
+                <h1
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  {info.username}
+                </h1>
+              ))}
+            </>
           ) : (
             <></>
           )}

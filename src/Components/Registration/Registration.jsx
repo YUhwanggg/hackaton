@@ -12,7 +12,6 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [password_confirm, setPassword_confirm] = useState("")
   const [email, setEmail] = useState("");
-  const [canSubmit, setCanSubmit] = useState(false);
   const [incorrect, setIncorrect] = useState("");
 
   const navigate = useNavigate();
@@ -51,25 +50,22 @@ const Registration = () => {
 
   const postUsers = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(REGISTER, {
-        username,
-        email,
-        password,
-        password_confirm,
-      });
-      if (response.status === 200 || 201) {
-        AuthUsers()
-      }
-    } catch (e) {
-      error()
-    }
-
     if (password !== password_confirm) {
-      setCanSubmit(true);
-      setIncorrect("Пароли не совпадают!");
-    } else {
-      setCanSubmit(false);
+      setIncorrect("Password mismatch!");
+    } else{
+      try {
+        const response = await axios.post(REGISTER, {
+          username,
+          email,
+          password,
+          password_confirm,
+        });
+        if (response.status === 200 || 201) {
+          AuthUsers()
+        }
+      } catch (e) {
+        error()
+      }
     }
   };
 
@@ -82,36 +78,36 @@ const Registration = () => {
             <img src={RegisterBackground} alt="img" />
           </div>
           <div className={s.registerForm}>
-            <h1>Добро пожаловать!</h1>
+            <h1>Welcome!</h1>
             <form onSubmit={postUsers}>
               <input
                 type="text"
                 value={username}
-                placeholder="Имя пользователя"
+                placeholder="Username"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <input
                 type="mail"
-                placeholder="Почта"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 type="password"
-                placeholder="Пароль*"
+                placeholder="Password*"
                 value={password}
                 autoComplete="on"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <input
                 type="password"
-                placeholder="Повторить пароль*"
+                placeholder="Repeat Password*"
                 value={password_confirm}
                 onChange={(e) => setPassword_confirm(e.target.value)}
               />
               {incorrect && <div>{incorrect}</div>}
               {contextHolder}
-              <button type="submit" disabled={!canSubmit} >Регистрация</button>
+              <button type="submit">Register</button>
             </form>
           </div>
         </div>

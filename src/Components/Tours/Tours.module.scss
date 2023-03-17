@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0 20px 0 20px;
+  .main_title {
+    text-align: center;
+    font-family: "Grape Nuts", cursive;
+    font-size: 49px;
+  }
+  .tours {
+    display: grid;
+    grid-template-columns: 347px 294px 294px;
+    grid-template-rows: 208px 208px;
+    gap: 45px;
+    margin-top: 44px;
+  }
+  .carousel {
+    img {
+      border-radius: 1%;
+    }
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 520px) {
+  .main {
+    margin-top: 50px;
+    .main_title {
+      font-size: 30px;
+    }
+  }
+  .tours {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr !important;
+  }
+}
+
+@media screen and (min-width: 521px) and (max-width: 1030px) {
+  .tours {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+  }
+}

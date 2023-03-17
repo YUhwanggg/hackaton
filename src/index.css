@@ -6,9 +6,15 @@
 html {
   scroll-behavior: smooth;
 }
+
 a {
   text-decoration: inherit;
   font-family: "Inter";
+  transition: 0.5s;
+}
+
+.active {
+  color: rgb(109, 216, 21) !important;
 }
 
 body {
@@ -23,4 +29,8 @@ body {
 #container {
   max-width: 80%;
   margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
