@@ -9,8 +9,12 @@ import slide1 from "../../../../Assets/img/slide1.png";
 import slide2 from "../../../../Assets/img/slide2.png";
 import slide3 from "../../../../Assets/img/slide3.png";
 import slide4 from "../../../../Assets/img/slide4.png";
+import { Typography } from "antd";
+
+const { Paragraph } = Typography;
 
 const Destination = () => {
+  
   return (
     <>
       <div id="container">
@@ -43,10 +47,11 @@ const Destination = () => {
                 }}
                 cover={<img alt="example" src={slide1} />}
               >
-                <Meta
-                  title="Venice"
-                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                />
+                <h4>Лондон (Гатвик) — Ванкувер</h4>
+                <p style={{margin: '10px 0px'}}>код билета:</p>
+                <Paragraph copyable>
+                  TS 275 J 15OCT 4 LGWYVR HK1 1010 1200 332 E 0
+                </Paragraph>
               </Card>
             </motion.div>
             <motion.div
@@ -65,10 +70,12 @@ const Destination = () => {
                 }}
                 cover={<img alt="example" src={slide2} />}
               >
-                <Meta
-                  title="Venice"
-                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                />
+               
+                <h4>"Ванкувер — Сиэтл (Такома)</h4>
+                <p style={{margin: '10px 0px'}}>код билета:</p>
+                <Paragraph copyable>
+                AC8097 Y 15OCT 4 YVRSEA HK1         1335 1435   DH4 E 0
+                </Paragraph>
               </Card>
             </motion.div>
             <motion.div
@@ -87,10 +94,12 @@ const Destination = () => {
                 }}
                 cover={<img alt="example" src={slide3} />}
               >
-                <Meta
-                  title="Venice"
-                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                />
+                
+                <h4>Сиэтл (Такома) — Портленд</h4>
+                <p style={{margin: '10px 0px'}}>код билета:</p>
+                <Paragraph copyable>
+                AS2254 F 17OCT 6 SEAPDX HK1         1700 1753   E75 E 0
+                </Paragraph>
               </Card>
             </motion.div>
             <motion.div
@@ -109,10 +118,12 @@ const Destination = () => {
                 }}
                 cover={<img alt="example" src={slide4} />}
               >
-                <Meta
-                  title="Venice"
-                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                />
+               
+                <h4> Портленд — Лондон (Хитроу)</h4>
+                <p style={{margin: '10px 0px'}}>код билета:</p>
+                <Paragraph copyable>
+                AA7007 J 17OCT 6 PDXLHR HK1         1845 1210+1 788 E 0
+                </Paragraph>
               </Card>
             </motion.div>
           </div>
